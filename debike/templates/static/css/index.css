@@ -117,24 +117,26 @@ section.apply img.apply-diamond {
   position: absolute;
   left: auto;
   top: auto;
-  right: 131px;
-  bottom: 110px;
+  right: 130px;
+  bottom: 150px;
   width: 100px;
   z-index: 2;
 }
 
 section.apply img.apply-flower {
   position: absolute;
-  left: 146px;
-  bottom: 151px;
+  left: 145px;
+  bottom: 110px;
   z-index: 2;
 }
 
 section.apply img.apply-grid {
   position: absolute;
   top: 60%;
+  width: 100%;
   left: auto;
   z-index: 1;
+  overflow: hidden;
 }
 
 section.apply div.apply-spike {

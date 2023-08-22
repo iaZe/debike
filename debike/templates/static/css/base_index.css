@@ -112,6 +112,6 @@ footer img.footer-img {
     position: absolute;
     left: auto;
     top: auto;
-    right: -2%;
+    right: 0;
     overflow: hidden;
 }
