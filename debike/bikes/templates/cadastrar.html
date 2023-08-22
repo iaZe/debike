@@ -1,0 +1,28 @@
+{% extends 'bases/base_app.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/form.css'%}" />
+{% endblock %} {% block 'title' %}Cadastrar{% endblock %} {% block 'body' %}
+
+<section class="section">
+  <div class="container-fluid bg-inscricao bg-img">
+    <div class="box-form custom-container">
+      <h1>Cadastrar Bike</h1>
+      {% if messages %} {% for message in messages %}
+      <div class="alert {{ message.tags }}">{{ message }}</div>
+      {% endfor %} {% endif %}
+      <hr style="border-color: #7e7b7c" />
+
+      <form
+        action="{% url 'cadastrar_bike' %}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {{ form.as_p }}
+
+        <br />
+        <input type="submit" value="CADASTRAR" class="button" />
+      </form>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

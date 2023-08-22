@@ -1,0 +1,22 @@
+{% extends 'bases/base_index.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/form.css'%}" />
+{% endblock %} {% block 'title' %}Consultar{% endblock %} {% block 'body' %}
+
+<div class="container-fluid bg-inscricao bg-img">
+  <div class="box-form custom-container">
+    <h1>Consultar bike</h1>
+    {% if messages %} {% for message in messages %}
+    <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %} {% endif %}
+    <hr style="border-color: #7e7b7c" />
+
+    <form action="{% url 'consultar_bike' %}" method="POST">
+      {% csrf_token %} {{ form.as_p }}
+
+      <br />
+      <input type="submit" value="CONSULTAR" class="button" />
+    </form>
+  </div>
+</div>
+
+{% endblock %}

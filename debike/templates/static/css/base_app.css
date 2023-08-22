@@ -1,0 +1,41 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+header nav.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    background-color: var(--white-color);
+    border: solid var(--dark-color);
+    border-width: 3px 0px 3px 0;
+}
+
+header nav.nav .nav-menu {
+    color: var(--dark-color);
+}
+
+header nav.nav ul {
+    display: flex;
+    padding: 1.4rem;
+    font-weight: var(--font-medium);
+}
+
+header nav.nav ul .active {
+    font-weight: var(--font-bold);
+}
+
+header nav.nav ul .nav-item {
+    padding: 0 1.3rem;
+}
+
+header nav.nav .nav-login {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+    margin-right: 1rem;
+}

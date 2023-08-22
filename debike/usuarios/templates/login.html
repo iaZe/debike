@@ -1,0 +1,40 @@
+{% extends 'bases/base_login.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/form.css'%}" />
+{% endblock %} {% block 'title' %}Login{% endblock %} {% block 'body' %}
+
+<div class="container-fluid bg-inscricao">
+  <div class="box-form custom-container">
+    <h1>Bem-vindo</h1>
+    {% if messages %} {% for message in messages %}
+    <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %} {% endif %}
+    <hr style="border-color: #7e7b7c" />
+
+    <form action="{% url 'login' %}" method="POST">
+      {% csrf_token %}
+      <label>Usuário:</label>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Email..."
+        name="username"
+      />
+      <br />
+      <label>Senha:</label>
+      <input
+        type="password"
+        class="form-control"
+        placeholder="Senha..."
+        name="password"
+      />
+      <br />
+      <a href="#" class="forget-password">Esqueci minha senha</a>
+      <input type="submit" value="ENTRAR" class="button" />
+      <p class="new-account">
+        Não tem conta? 
+        <a href="{% url 'cadastro' %}" class="new-account">Cadastre-se</a>
+      </p>
+    </form>
+  </div>
+</div>
+{% endblock %}

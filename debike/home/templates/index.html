@@ -1,0 +1,230 @@
+{% extends 'bases/base_index.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="{% static 'css/animation.css' %}" />
+<link rel="stylesheet" href="{% static 'css/faq.css' %}" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %}
+<section class="home section">
+  <div class="home-container grid">
+    <div class="home-product">
+      <div class="home-shape">
+        <svg
+          width="332"
+          height="452"
+          viewBox="0 0 431 586"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g filter="url(#filter0_d_50_64)">
+            <mask id="path-1-inside-1_50_64" fill="white">
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M8.98181 109.934C3.35572 115.56 0.195007 123.19 0.195007 131.147V545.5C0.195007 562.069 13.6265 575.5 30.195 575.5H390.195C406.764 575.5 420.195 562.069 420.195 545.5V30.5C420.195 13.9315 406.764 0.5 390.195 0.5H130.842C122.885 0.5 115.255 3.66071 109.629 9.2868L8.98181 109.934Z"
+              />
+            </mask>
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.98181 109.934C3.35572 115.56 0.195007 123.19 0.195007 131.147V545.5C0.195007 562.069 13.6265 575.5 30.195 575.5H390.195C406.764 575.5 420.195 562.069 420.195 545.5V30.5C420.195 13.9315 406.764 0.5 390.195 0.5H130.842C122.885 0.5 115.255 3.66071 109.629 9.2868L8.98181 109.934Z"
+              fill="#C79FFA"
+            />
+            <path
+              d="M3.19501 545.5V131.147H-2.80499V545.5H3.19501ZM390.195 572.5H30.195V578.5H390.195V572.5ZM417.195 30.5V545.5H423.195V30.5H417.195ZM130.842 3.5H390.195V-2.5H130.842V3.5ZM107.507 7.16548L6.86049 107.812L11.1031 112.055L111.75 11.4081L107.507 7.16548ZM130.842 -2.5C122.09 -2.5 113.696 0.976776 107.507 7.16548L111.75 11.4081C116.814 6.34463 123.681 3.5 130.842 3.5V-2.5ZM423.195 30.5C423.195 12.2746 408.42 -2.5 390.195 -2.5V3.5C405.107 3.5 417.195 15.5883 417.195 30.5H423.195ZM390.195 578.5C408.42 578.5 423.195 563.725 423.195 545.5H417.195C417.195 560.412 405.107 572.5 390.195 572.5V578.5ZM3.19501 131.147C3.19501 123.986 6.03965 117.119 11.1031 112.055L6.86049 107.812C0.671789 114.001 -2.80499 122.395 -2.80499 131.147H3.19501ZM-2.80499 545.5C-2.80499 563.725 11.9696 578.5 30.195 578.5V572.5C15.2833 572.5 3.19501 560.412 3.19501 545.5H-2.80499Z"
+              fill="black"
+              mask="url(#path-1-inside-1_50_64)"
+            />
+          </g>
+          <defs>
+            <filter
+              id="filter0_d_50_64"
+              x="0.195007"
+              y="0.5"
+              width="430"
+              height="585"
+              filterUnits="userSpaceOnUse"
+              color-interpolation-filters="sRGB"
+            >
+              <feFlood flood-opacity="0" result="BackgroundImageFix" />
+              <feColorMatrix
+                in="SourceAlpha"
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                result="hardAlpha"
+              />
+              <feOffset dx="10" dy="10" />
+              <feComposite in2="hardAlpha" operator="out" />
+              <feColorMatrix
+                type="matrix"
+                values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"
+              />
+              <feBlend
+                mode="normal"
+                in2="BackgroundImageFix"
+                result="effect1_dropShadow_50_64"
+              />
+              <feBlend
+                mode="normal"
+                in="SourceGraphic"
+                in2="effect1_dropShadow_50_64"
+                result="shape"
+              />
+            </filter>
+          </defs>
+        </svg>
+      </div>
+      <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d4330ce3f2051a9f4bb_Red%20Star.svg" alt="" class="home-star rotating-image">
+      <img src="{% static 'img/bike01.png' %}" alt="" class="home-img" />
+    </div>
+    <div class="home-data">
+      <h1 class="home-title">Queremos um futuro</h1>
+      <h1 class="home-title" style="color: #c79ffa">mais seguro</h1>
+      <p class="home-description">
+        Estamos aqui para ajudar você, a fazer a compra certa.<br />
+        Procure por bicicletas livres de restrições ou<br />
+        crie uma restrição para sua bicicleta.
+      </p>
+      <a href="{% url 'cadastro' %}" class="button">CADASTRE-SE</a>
+      <img src="https://assets.website-files.com/5837424ae11409586f837994/6119d83a539ea14de7db7bac_Group%2022.svg" alt="" class="home-arrow">
+    </div>
+  </div>
+</section>
+
+<section class="about section" id="about">
+  <div class="about-container grid">
+    <div class="sell-wrapper">
+      <h1 class="about-title">Quem somos?</h1>
+      <p class="about-text">
+        Nos, da Solutech, viemos para ajudar os ciclistas a não comprarem produtos de origem duvidosa, além da tentativa de encontrar bicicletas roubadas, e devolve-las aos seus donos.
+      </p>
+      <div class="about-twinkle">
+        <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc0b73912d9c34135d850e_Purple%20Shine.svg" loading="lazy" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="about-text">
+    <h2 style="--i: 0.1">
+      <span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span>
+    </h2>
+    <h2 style="--i: 0.5">
+      <span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span>
+    </h2>
+    <h2 style="--i: 1">
+      <span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span>
+    </h2>
+    <h2 style="--i: 0.8">
+      <span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span>
+    </h2>
+    <h2 style="--i: 0.3">
+      <span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span
+      ><span>Solutech</span><span>Solutech</span><span>Solutech</span>
+    </h2>
+    <script>
+      const position = document.documentElement
+      position.addEventListener('mousemove', e => {
+        position.style.setProperty('--x', e.clientX + 'px')
+      })
+    </script>
+  </div>
+</section>
+
+<section class="apply section">
+  <div class="apply-spike">
+    <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc10b6e899f34312ad21b6_Red%20Spike.svg" alt="" class="rotating-image">
+  </div>
+  <div class="apply-container grid">
+    <div class="apply-data">
+      <h1 class="apply-title">O que está esperando para participar?</h1>
+      <p class="apply-text">Venha fazer parte da nossa comunidade</p>
+      <a href="{% url 'cadastro' %}" class="button">Cadastre-se</a>
+    </div>
+  </div>
+  <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d445d8430199d5b6cf6_Yellow%20Diamond%202.svg" alt="" class="apply-diamond">
+  <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d43ea57f87a2d7d3676_Flower.svg" alt="" class="apply-flower">
+  <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62c2e1d55ea0ee950ecab5d6_Slack%20Ui%20Fold%20Grid.svg" alt="" class="apply-grid">
+</section>
+
+<section class="faq section">
+  <div class="faq-container grid">
+    <div class="faq-data">
+      <h1 class="faq-title">FAQ</h1>
+    </div>
+    <div class="faq-wrapper">
+      <div class="faq-img">
+        <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc0b731de66684984e782b_Blue%20Spike.svg" alt="" class="rotating-image">
+      </div>
+      <div class="new-faq-wrapper">
+        <div class="faq-inner-wrapper">
+          <div class="c-faq">
+            <div class="faq-item first" id="1">
+              <div class="faq-header">
+                <div class="faq-text">
+                  <h1 class="faq-title">Como funciona?</h1>
+                </div>
+                <div class="faq-icon"><i class='bx bx-chevron-down'></i></div>
+              </div>
+              <div class="faq-content active" id="1">
+                <hr>
+                <div class="faq-text">
+                  <p class="faq-text">
+                    A Solutech é uma plataforma que tem como objetivo ajudar os ciclistas a não comprarem produtos de origem duvidosa, além da tentativa de encontrar bicicletas roubadas, e devolve-las aos seus donos.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item" id="2">
+              <div class="faq-header">
+                <div class="faq-text">
+                  <h1 class="faq-title">Como funciona?</h1>
+                </div>
+                <div class="faq-icon"><i class='bx bx-chevron-down'></i></div>
+              </div>
+              <div class="faq-content" id="2">
+                <hr>
+                <div class="faq-text">
+                  <p class="faq-text">
+                    A Solutech é uma plataforma que tem como objetivo ajudar os ciclistas a não comprarem produtos de origem duvidosa, além da tentativa de encontrar bicicletas roubadas, e devolve-las aos seus donos.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="faq-item last" id="3">
+              <div class="faq-header">
+                <div class="faq-text">
+                  <h1 class="faq-title">Como funciona?</h1>
+                </div>
+                <div class="faq-icon"><i class='bx bx-chevron-down'></i></div>
+              </div>
+              <div class="faq-content" id="3">
+                <hr>
+                <div class="faq-text">
+                  <p class="faq-text">
+                    A Solutech é uma plataforma que tem como objetivo ajudar os ciclistas a não comprarem produtos de origem duvidosa, além da tentativa de encontrar bicicletas roubadas, e devolve-las aos seus donos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+{% endblock %}
+
+{% block 'script' %}
+<script src="{% static 'js/faq.js' %}"></script>
+<script src="{% static 'js/animation.js' %}"></script>
+{% endblock %}

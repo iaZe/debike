@@ -1,0 +1,35 @@
+section.about div.about-text {
+  position: absolute;
+  top: 0;
+  background-color: var(--white-color);
+}
+
+section.about div.about-text h2 {
+  position: relative;
+  width: 100%;
+  font-size: 8em;
+  pointer-events: none;
+  line-height: 1em;
+  white-space: nowrap;
+  font-weight: var(--font-semi-bold);
+  text-shadow: calc(var(--x)) 100px 0 var(--light-dark-color);
+  transform: translateX(calc(0% - var(--x) * var(--i)));
+}
+
+section.about div.about-text h2 span {
+  margin: 0 10px;
+  color: var(--background-color-2);
+}
+
+section.about div.about-text h2 span:nth-child(even) {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--background-color-2);
+}
+
+.rotating-image {
+  max-width: 100%;
+  max-height: 100%;
+  transform-origin: center center;
+  transform: rotate(0deg);
+  transition: transform 0.1s ease;
+}

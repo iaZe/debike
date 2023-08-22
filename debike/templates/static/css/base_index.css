@@ -1,0 +1,117 @@
+body {
+    margin: 3rem 0 0 0;
+    font-size: var(--normal-font-size);
+    font-family: var(--lato);
+    color: var(--white-color);
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+header div.logo {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 24px;
+    color: var(--dark-color);
+    background-color: var(--background-color);
+    z-index: 99;
+}
+
+header nav.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    background-color: var(--white-color);
+    border: solid var(--dark-color);
+    border-width: 3px 0px 3px 0;
+}
+
+header nav.nav .nav-menu {
+    color: var(--dark-color);
+}
+
+header nav.nav ul {
+    display: flex;
+    padding: 1.4rem;
+    font-weight: var(--font-medium);
+}
+
+header nav.nav ul .active {
+    font-weight: var(--font-bold);
+}
+
+header nav.nav ul .nav-item {
+    padding: 0 1.3rem;
+}
+
+header nav.nav .nav-login {
+    display: flex;
+    margin-right: 1rem;
+}
+
+header nav.nav .nav-login a.entrar {
+    color: var(--dark-color);
+    border: solid var(--dark-color);
+    border-width: 0px 3px 0px 3px;
+}
+
+header nav.nav .nav-login a.cadastro {
+    color: var(--white-color);
+    background-color: var(--dark-color);
+}
+
+footer {
+    color: var(--white-color);
+}
+
+footer div.footer-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+footer div.footer-container .footer-box {
+    margin-bottom: 2rem;
+}
+
+footer div.footer-container .footer-box img {
+    max-width: 95px;
+}
+
+footer div.footer-container .footer-box h1 {
+    color: var(--white-color);
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+    margin-bottom: 1rem;
+}
+
+footer div.footer-container .footer-box a {
+    color: var(--white-color);
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: 1rem;
+}
+
+footer div.footer-container .footer-box .footer-social {
+    font-size: var(--bigger-font-size);
+    margin-right: 1.25rem;
+}
+
+footer p.footer-copy {
+    text-align: center;
+    color: var(--white-color);
+    font-size: var(--smaller-font-size);
+}
+
+footer img.footer-img {
+    position: absolute;
+    left: auto;
+    top: auto;
+    right: -2%;
+    overflow: hidden;
+}

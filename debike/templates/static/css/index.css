@@ -1,0 +1,236 @@
+section.home {
+  padding: 10rem 0 6rem;
+  color: var(--dark-color);
+  overflow: hidden;
+}
+
+section.home .home-container {
+  column-gap: 8rem;
+  height: 100%;
+  grid-template-columns: max-content max-content;
+  justify-content: center;
+  align-items: center;
+}
+
+section.home .home-container .home-product {
+  order: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-self: center;
+}
+
+section.home .home-container .home-product img.home-star {
+  position: absolute;
+  left: auto;
+  top: -25px;
+  right: -25px;
+  bottom: auto;
+}
+
+section.home .home-container .home-product .home-img {
+  position: absolute;
+  top: 1rem;
+  width: 500px;
+  max-width: initial;
+  transform: rotate(10deg);
+}
+
+section.home .home-container .home-data .home-title {
+  font-size: 48px;
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+}
+
+section.home .home-container .home-data .home-description {
+  font-size: 18px;
+  margin-bottom: 1.5rem;
+}
+
+section.home .home-container .home-data .button {
+  color: var(--dark-color);
+  background-color: var(--yellow-color);
+}
+
+section.home .home-container .home-data img.home-arrow {
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: 50%;
+  bottom: -10%;
+  z-index: 2;
+}
+
+section.about {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
+section.about div.about-container div.sell-wrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  max-width: 730px;
+  margin: 100px auto;
+  padding: 56px 48px;
+  flex-direction: column;
+  grid-row-gap: 1.5rem;
+  border: var(--tiniest-border);
+  border-radius: 10px;
+  background-color: var(--green-color);
+  box-shadow: var(--white-shadow);
+  color: var(--dark-color)
+}
+
+section.about div.about-container div.sell-wrapper h1 {
+  font-size: 48px;
+  font-weight: var(--font-bold);
+  margin-bottom: 1rem;
+}
+
+section.about div.about-container div.sell-wrapper p {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+section.about div.about-container div.sell-wrapper div.about-twinkle {
+  position: absolute;
+  left: auto;
+  top: -50px;
+  right: -50px;
+  bottom: auto;
+}
+
+section.about div.about-container div.sell-wrapper div.about-twinkle img {
+  width: 120px;
+}
+
+section.apply {
+  position: relative;
+  background-color: var(--blue-color);
+}
+
+section.apply img.apply-diamond {
+  position: absolute;
+  left: auto;
+  top: auto;
+  right: 131px;
+  bottom: 110px;
+  width: 100px;
+  z-index: 2;
+}
+
+section.apply img.apply-flower {
+  position: absolute;
+  left: 146px;
+  bottom: 151px;
+  z-index: 2;
+}
+
+section.apply img.apply-grid {
+  position: absolute;
+  top: 60%;
+  left: auto;
+  z-index: 1;
+}
+
+section.apply div.apply-spike {
+  position: absolute;
+  left: -112px;
+  top: -112px;
+  right: auto;
+  bottom: auto;
+  z-index: 2;
+}
+
+section.apply div.apply-spike img {
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+section.apply div.apply-container {
+  max-width: 1110px;
+}
+
+section.apply div.apply-container div.apply-data {
+  display: flex;
+  max-width: 520px;
+  margin: 40px auto;
+  flex-direction: column;
+  align-items: center;
+  grid-row-gap: 1.5rem;
+  z-index: 2;
+}
+
+section.apply div.apply-container div.apply-data h1 {
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  text-align: center;
+}
+
+section.apply div.apply-container div.apply-data p {
+  font-size: 18px;
+  text-align: center;
+}
+
+section.apply div.apply-container div.apply-data .button {
+  color: var(--dark-color);
+  background-color: var(--yellow-color);
+}
+
+section.faq {
+  padding: 5rem 0 2rem;
+  color: var(--dark-color);
+  overflow: hidden;
+}
+
+section.faq div.faq-container {
+  max-width: 1110px;
+}
+
+section.faq div.faq-container div.faq-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.faq div.faq-container div.faq-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+section.faq div.faq-container div.faq-wrapper div.faq-img {
+  position: absolute;
+  left: auto;
+  top: -2%;
+  right: -5%;
+  bottom: auto;
+  z-index: -1;
+  width: 150px;
+}
+
+section.faq div.faq-container div.faq-wrapper div.faq-img img {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+section.faq div.faq-container div.faq-wrapper div.new-faq-wrapper {
+  position: static;
+  max-width: 1077px;
+  margin: 40px auto 60px;
+  padding: 0;
+  border: var(--tiniest-border);
+  border-radius: 15px;
+  background-color: var(--white-color);
+  box-shadow: var(--black-shadow);
+}
+
+section.faq div.faq-container div.faq-wrapper div.new-faq-wrapper div.faq-inner-wrapper {
+  position: static;
+  min-height: auto;
+  min-width: 900px;
+}

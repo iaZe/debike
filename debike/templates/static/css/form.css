@@ -1,0 +1,88 @@
+div.bg-inscricao {
+    min-height: 100vh;
+    height: 100%;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.bg-inscricao div.custom-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+div.bg-inscricao div.box-form {
+    max-width: 500px;
+    background-color: var(--purple-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--black-shadow);
+}
+
+div.bg-inscricao div.box-form h1 {
+    color: var(--white-color);
+    font-size: 30px;
+    font-weight: var(--font-bold);
+    margin-bottom: 20px;
+}
+
+div.bg-inscricao div.box-form p.info {
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 20px;
+}
+
+div.bg-inscricao div.box-form form label {
+    color: var(--white-color);
+    font-size: 18px;
+    font-weight: var(--font-semi-bold);
+    margin-bottom: 10px;
+}
+
+div.bg-inscricao div.box-form form input.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: var(--tiniest-border);
+    box-shadow: var(--white-shadow);
+}
+
+div.bg-inscricao div.box-form form input.button {
+    width: 100%;
+    background-color: var(--yellow-color);
+    margin-top: 20px;
+}
+
+div.bg-inscricao div.box-form form input.button.cadastro {
+    width: 100%;
+    background-color: var(--yellow-color);
+    margin-top: 40px;
+}
+
+div.bg-inscricao div.box-form form a {
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: var(--font-normal);
+}
+
+div.bg-inscricao div.box-form form p.new-account {
+    text-align: center;
+    color: var(--white-color);
+    font-size: 16px;
+    font-weight: var(--font-normal);
+    margin-top: 40px;
+}
+
+div.bg-inscricao div.box-form form p a.new-account {
+    color: var(--dark-color);
+}
+
+div.bg-inscricao div.box-form form a:hover {
+    text-decoration: underline;
+}
+
+
+
+

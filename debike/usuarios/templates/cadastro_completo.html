@@ -1,0 +1,36 @@
+{% extends 'bases/base_login.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/cadastro_completo.css'%}" />
+{% endblock %} {% block 'title' %}Complete seu cadastro{% endblock %} {% block 'body' %}
+
+<div class="container-fluid bg-inscricao bg-img">
+  <div class="box-form custom-container">
+    <h1>Concluir o cadastro</h1>
+    {% if messages %} {% for message in messages %}
+    <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %} {% endif %}
+    <hr style="border-color: #7e7b7c" />
+    <form action="{% url 'cadastro_completo' %}" method="POST">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md"><label>Nome:</label>{{ form.first_name }}</div>
+        <div class="col-md"><label>Sobrenome:</label>{{ form.last_name }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md"><label>CPF:</label>{{ form.cpf }}</div>
+        <div class="col-md"><label>Sexo:</label>{{ form.sexo }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md">
+          <label>Data de nascimento</label>{{ form.data_nascimento }}
+        </div>
+        <div class="col-md"><label>Telefone</label>{{ form.telefone }}</div>
+      </div>
+      <div class="row">
+        <div class="col-md"><label>Cidade</label>{{ form.cidade }}</div>
+        <div class="col-md"><label>Estado</label>{{ form.estado }}</div>
+      </div>
+      <input type="submit" value="CADASTRAR" class="button" />
+    </form>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'bases/base_index.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock %} {% block 'title' %}Restrições{% endblock %} {% block 'body' %}
+<section class="home">
+  <div class="home-container grid">
+    <div class="home-data">
+      <h1 class="home-title">O que é uma restrição?</h1>
+      <p class="home-description">
+        Existem vários tipos de restrição, mas a mais comum é a restrição de
+        furto ou roubo. Caso você esteja comprando uma <br />bicicleta e ela possua
+        uma restrição, você pode estar comprando uma bicicleta roubada.
+        Por isso, é importante que <br />você verifique se a bicicleta que você está
+        comprando possui alguma restrição.
+      </p>
+      <h1 class="home-title">Fui roubado, e agora?</h1>
+      <p class="home-description">
+        Caso sua bicicleta tenha sido roubada, você pode cadastrar uma restrição
+        para ela, assim, caso ela seja encontrada,<br /> você poderá recuperá-la.
+      </p>
+      <h1 class="home-title">
+        Como posso verificar o que estou comprando?
+      </h1>
+      <p class="home-description">
+        Nossa plataforma faz a verificação de restrições, <a href="http://"> clique aqui</a>
+      </p>
+      <a href="{% url 'cadastro' %}" class="button">CADASTRE-SE</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
