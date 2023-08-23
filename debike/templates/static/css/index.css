@@ -82,7 +82,7 @@ section.about div.about-container div.sell-wrapper {
   border-radius: 10px;
   background-color: var(--green-color);
   box-shadow: var(--white-shadow);
-  color: var(--dark-color)
+  color: var(--dark-color);
 }
 
 section.about div.about-container div.sell-wrapper h1 {
@@ -165,7 +165,7 @@ section.apply div.apply-container div.apply-data {
   flex-direction: column;
   align-items: center;
   grid-row-gap: 1.5rem;
-  z-index: 2;
+  z-index: 3;
 }
 
 section.apply div.apply-container div.apply-data h1 {
@@ -231,8 +231,100 @@ section.faq div.faq-container div.faq-wrapper div.new-faq-wrapper {
   box-shadow: var(--black-shadow);
 }
 
-section.faq div.faq-container div.faq-wrapper div.new-faq-wrapper div.faq-inner-wrapper {
+section.faq
+  div.faq-container
+  div.faq-wrapper
+  div.new-faq-wrapper
+  div.faq-inner-wrapper {
   position: static;
   min-height: auto;
-  min-width: 900px;
+  min-width: auto;
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+  section.home {
+    padding: 8rem 0 4rem;
+  }
+
+  section.home .home-container {
+    grid-template-columns: 100%;
+    column-gap: 2rem;
+  }
+
+  section.home .home-container .home-product {
+    order: 0;
+    margin-bottom: 2rem;
+  }
+
+  section.home .home-container .home-data img.home-arrow {
+    display: none;
+  }
+
+  section.home .home-container .home-product img.home-star {
+    top: -25px;
+    right: 0px;
+  }
+
+  section.apply img.apply-diamond {
+    right: 5px;
+    bottom: 15px;
+  }
+
+  section.apply img.apply-flower {
+    left: 80px;
+  }
+
+  section.apply img.apply-grid {
+    top: 90%;
+  }
+  
+  section.about {
+    width: 100%;
+    height: 100%;
+  }
+
+  .grid {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  section.home {
+    padding: 0;
+  }
+
+  section.home .home-container {
+    column-gap: 2rem;
+    height: 100vh;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.about {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 2559px) {
+  section.home {
+    padding: 0;
+  }
+
+  section.home .home-container {
+    column-gap: 2rem;
+    height: 100vh;
+    grid-template-columns: max-content max-content;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section.about {
+    width: 100%;
+    height: 100%;
+  }
 }

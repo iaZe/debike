@@ -115,3 +115,11 @@ footer img.footer-img {
     right: 0;
     overflow: hidden;
 }
+
+/* MOBILE */
+
+@media screen and (max-width: 768px) {
+    header nav.nav .nav-menu {
+      display: none;
+    }
+  }
