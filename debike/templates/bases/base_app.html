@@ -41,12 +41,21 @@
           </ul>
         </div>
         <div class="nav-login">
-          <ul class="nav-list">
-            <li class="nav-item">Solutech</li>
-          </ul>
+          <a href="{% url 'logout' %}" class="entrar">
+            <ul class="nav-list">
+              <li class="nav-item">Sair</li>
+            </ul>
+          </a>
+          <a href="" class="cadastro">
+            <ul class="nav-list">
+              <li class="nav-item">Solutech</li>
+            </ul>
+          </a>
         </div>
       </nav>
     </header>
     <main>{% block 'body' %} {% endblock %}</main>
+
+    {% block 'script' %} {% endblock %}
   </body>
 </html>

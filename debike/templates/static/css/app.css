@@ -31,6 +31,10 @@ div.container article.bike {
   transition: 0.3s;
 }
 
+div.container article.bike.restricao {
+  background-color: var(--red-color);
+}
+
 div.container article.bike:hover {
   transform: translateY(-0.25rem);
 }
@@ -39,6 +43,7 @@ div.container article.bike div.card {
   position: relative;
   display: inline-block;
 }
+
 
 div.container article.bike div.card img {
   border-radius: 15px 15px 0 0;
@@ -62,4 +67,15 @@ div.container article.bike div.buttons a {
   font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);
   padding: 0 0.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  section.section {
+    padding: 10rem 0 2rem;
+  }
+
+  .grid {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
 }

@@ -5,23 +5,36 @@
 <section class="section grid">
   {% if not bikes %}
   <h1 class="section-title">
-    Olá {{user}}, você não possui bikes cadastradas.
+    Olá {{user.first_name }}, você não possui bicicletas cadastradas.
   </h1>
   {% else %}
-  <h1 class="section-title">Suas bikes cadastradas</h1>
+  <h1 class="section-title">Suas bicicletas cadastradas</h1>
   {% endif %}
+
+  {% if messages %} {% for message in messages %}
+  <div class="alert {{ message.tags }}">{{ message }}</div>
+  {% endfor %} {% endif %}
+
   <div class="main-container">
     {% for bike in bikes %}
     <div class="container">
+      {% if bike.restricao == True %}
+      <article class="bike restricao">
+      {% else %}
       <article class="bike">
-        <div class="card">
+      {% endif %}
+      <div class="card">
           <a><img src="/media/{{bike.foto}}" /></a>
         </div>
         <h1 class="bike-name">{{bike}}</h1>
         <div class="buttons">
           <a href="{% url 'vender_bike' bike.ID %}">Vender</a>
-          <a href="">Restringir</a>
-          <a href="">Excluir</a>
+          {% if bike.restricao == True %}
+          <a href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Liberar</a>
+          {% else %}
+          <a href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Restringir</a>
+          {% endif %}
+          <a href="{% url 'excluir_bike' bike.ID %}" onclick="return youreSure()">Excluir</a>
         </div>
       </article>
     </div>
@@ -29,4 +42,7 @@
   </div>
 </section>
 
+{% endblock %}
+{% block 'script' %}
+    <script src="{% static 'js/verify.js' %}"></script>
 {% endblock %}

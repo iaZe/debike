@@ -71,6 +71,8 @@ def login(request):
             return redirect(reverse("cadastro_completo"))
         return redirect(reverse("inicio"))
     else:
+        if request.user.is_authenticated:
+            return redirect(reverse("inicio"))
         return render(request, "login.html")
 
 

@@ -35,7 +35,17 @@ header nav.nav ul .nav-item {
 }
 
 header nav.nav .nav-login {
+  display: flex;
+  margin-right: 1rem;
+}
+
+header nav.nav .nav-login a.entrar {
+  color: var(--dark-color);
+  border: solid var(--dark-color);
+  border-width: 0px 3px 0px 3px;
+}
+
+header nav.nav .nav-login a.cadastro {
   color: var(--white-color);
   background-color: var(--dark-color);
-  margin-right: 1rem;
 }

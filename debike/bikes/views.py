@@ -61,3 +61,43 @@ def vender(request, codigo):
     else:
         form = VenderBikeForm()
     return render(request, "vender.html", {"form": form, "bike": bike})
+
+@login_required
+def restringir(request, codigo):
+    bike = Bike.objects.filter(ID=codigo).first()
+    print(bike)
+    if request.user != bike.dono:
+        error = messages.error(request, "Bike não pertence ao usuário")
+        return render(
+            request, "consultar.html", {"form": ConsultarBikeForm(), "error": error}
+        )
+    if not bike:
+        error = messages.error(request, "Bike não cadastrada")
+        return render(
+            request, "consultar.html", {"form": ConsultarBikeForm(), "error": error}
+        )
+    if bike.restricao == True:
+        bike.restricao = False
+        messages.success(request, "Bike liberada com sucesso")
+    else:
+        bike.restricao = True
+        messages.success(request, "Bike restringida com sucesso")
+    bike.save()
+    return redirect(reverse("inicio"))
+
+@login_required
+def excluir(request, codigo):
+    bike = Bike.objects.filter(ID=codigo).first()
+    if request.user != bike.dono:
+        error = messages.error(request, "Bike não pertence ao usuário")
+        return render(
+            request, "consultar.html", {"form": ConsultarBikeForm(), "error": error}
+        )
+    if not bike:
+        error = messages.error(request, "Bike não cadastrada")
+        return render(
+            request, "consultar.html", {"form": ConsultarBikeForm(), "error": error}
+        )
+    bike.delete()
+    messages.success(request, "Bike excluída com sucesso")
+    return redirect(reverse("inicio"))

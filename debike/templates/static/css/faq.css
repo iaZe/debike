@@ -64,7 +64,7 @@ div.faq-header div.faq-icon i {
 
 div.faq-content {
     overflow: hidden;
-    max-width: 800px;
+    max-width: 900px;
     perspective-origin: 50% 0%;
     transform-origin: 50% 0%;
     font-size: 18px;
