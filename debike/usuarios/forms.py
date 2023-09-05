@@ -66,7 +66,7 @@ class CustomUserCompleteForm(forms.ModelForm):
         label="Telefone",
         min_length=11,
         max_length=14,
-        widget=forms.TextInput(attrs={"class": "form-control", "pattern": "\(\d{2}\) \d{5}-\d{4}", "placeholder": "(00) 00000-0000"}),
+        widget=forms.TextInput(attrs={"class": "form-control", "pattern": "\(\d{2}\)\d{5}-\d{4}", "placeholder": "(00) 00000-0000"}),
     )
     data_nascimento = forms.DateField(
         required=True,
