@@ -12,22 +12,22 @@
     <form action="{% url 'cadastro_completo' %}" method="POST">
       {% csrf_token %}
       <div class="row">
-        <div class="col-md"><label>Nome:</label>{{ form.first_name }}</div>
-        <div class="col-md"><label>Sobrenome:</label>{{ form.last_name }}</div>
+        <div class="col-md"><label>Nome*:</label>{{ form.first_name }}</div>
+        <div class="col-md"><label>Sobrenome*:</label>{{ form.last_name }}</div>
       </div>
       <div class="row">
-        <div class="col-md"><label>CPF:</label>{{ form.cpf }}</div>
-        <div class="col-md"><label>Sexo:</label>{{ form.sexo }}</div>
+        <div class="col-md"><label>CPF*:</label>{{ form.cpf }}</div>
+        <div class="col-md"><label>Sexo*:</label>{{ form.sexo }}</div>
       </div>
       <div class="row">
         <div class="col-md">
-          <label>Data de nascimento</label>{{ form.data_nascimento }}
+          <label>Data de nascimento*:</label>{{ form.data_nascimento }}
         </div>
-        <div class="col-md"><label>Telefone</label>{{ form.telefone }}</div>
+        <div class="col-md"><label>Telefone*:</label>{{ form.telefone }}</div>
       </div>
       <div class="row">
-        <div class="col-md"><label>Cidade</label>{{ form.cidade }}</div>
-        <div class="col-md"><label>Estado</label>{{ form.estado }}</div>
+        <div class="col-md"><label>Cidade*:</label>{{ form.cidade }}</div>
+        <div class="col-md"><label>Estado*:</label>{{ form.estado }}</div>
       </div>
       <input type="submit" value="CADASTRAR" class="button" />
     </form>

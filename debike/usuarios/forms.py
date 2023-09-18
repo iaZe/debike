@@ -40,47 +40,47 @@ class CustomUserCompleteForm(forms.ModelForm):
     )
     first_name = forms.CharField(
         required=True,
-        label="Nome",
+        label="Nome*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     last_name = forms.CharField(
         required=True,
-        label="Sobrenome",
+        label="Sobrenome*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     cpf = forms.CharField(
         required=True,
-        label="CPF",
+        label="CPF*",
         min_length=11,
-        max_length=14,
-        widget=forms.TextInput(attrs={"class": "form-control", "pattern": "\d{3}\.\d{3}\.\d{3}-\d{2}", "placeholder": "000.000.000-00"}),
+        max_length=11,
+        widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     sexo = forms.ChoiceField(
         required=True,
-        label="Sexo",
+        label="Sexo*",
         choices=SEXO,
         widget=forms.Select(attrs={"class": "form-control"}),
     )
     telefone = forms.CharField(
         required=True,
-        label="Telefone",
+        label="Telefone*",
         min_length=11,
-        max_length=14,
-        widget=forms.TextInput(attrs={"class": "form-control", "pattern": "\(\d{2}\)\d{5}-\d{4}", "placeholder": "(00) 00000-0000"}),
+        max_length=11,
+        widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     data_nascimento = forms.DateField(
         required=True,
-        label="Data de nascimento",
+        label="Data de nascimento*",
         widget=forms.DateInput(attrs={"class": "form-control"}),
     )
     cidade = forms.CharField(
         required=True,
-        label="Cidade",
+        label="Cidade*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     estado = forms.ChoiceField(
         required=True,
-        label="Estado",
+        label="Estado*",
         choices=ESTADO,
         widget=forms.Select(attrs={"class": "form-control"}),
     )

@@ -38,9 +38,9 @@ class CustomUser(AbstractUser):
         ("SE", "Sergipe"),
         ("TO", "Tocantins"),
     )
-    cpf = models.CharField(max_length=14, unique=True, null=True, blank=True)
+    cpf = models.CharField(max_length=11, unique=True, null=True, blank=True)
     sexo = models.CharField(max_length=1, choices=SEXO, null=True, blank=True)
-    telefone = models.CharField(max_length=14, null=True, blank=True)
+    telefone = models.CharField(max_length=11, null=True, blank=True)
     data_nascimento = models.DateField(null=True, blank=True)
     cidade = models.CharField(max_length=100, null=True, blank=True)
     estado = models.CharField(max_length=2, choices=ESTADO, null=True, blank=True)

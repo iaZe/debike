@@ -5,17 +5,17 @@ from .models import Bike, Venda
 class CadastrarBikeForm(forms.ModelForm):
     codigo = forms.CharField(
         required=True,
-        label="Código",
+        label="Código*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     modelo = forms.CharField(
         required=True,
-        label="Modelo",
+        label="Modelo*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     cor = forms.CharField(
         required=True,
-        label="Cor",
+        label="Cor*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     foto = forms.FileField(
@@ -32,7 +32,7 @@ class CadastrarBikeForm(forms.ModelForm):
 class ConsultarBikeForm(forms.Form):
     codigo = forms.CharField(
         required=True,
-        label="Código",
+        label="Código*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
 
@@ -42,12 +42,12 @@ class ConsultarBikeForm(forms.Form):
 class VenderBikeForm(forms.ModelForm):
     cpf = forms.CharField(
         required=True,
-        label="CPF do comprador",
+        label="CPF do comprador*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     valor = forms.CharField(
         required=True,
-        label="Valor",
+        label="Valor*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
 
