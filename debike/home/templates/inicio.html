@@ -4,40 +4,48 @@
 
 <section class="section grid">
   {% if not bikes %}
-  <h1 class="section-title">
-    Olá {{user.first_name }}, você não possui bicicletas cadastradas.
-  </h1>
+  <h2 class="section-title">Olá {{user.first_name }}, você não possui bicicletas cadastradas.</h2>
   {% else %}
-  <h1 class="section-title">Suas bicicletas cadastradas</h1>
+  <h2 class="section-title">Suas bicicletas cadastradas</h2>
   {% endif %}
 
   {% if messages %} {% for message in messages %}
   <div class="alert {{ message.tags }}">{{ message }}</div>
   {% endfor %} {% endif %}
 
-  <div class="main-container">
+  <div class="container grid">
     {% for bike in bikes %}
-    <div class="container">
-      {% if bike.restricao == True %}
-      <article class="bike restricao">
-      {% else %}
-      <article class="bike">
-      {% endif %}
-      <div class="card">
-          <a><img src="/media/{{bike.foto}}" /></a>
+      <article class="bikes" id="bikes" value="{{bike.ID}}">
+        {% if bike.restricao == True %}
+        <div class="restricao-bike">RESTRITA</div>
+        {% endif %}
+        {% if not bike.foto %}
+        <div class="none-bike">SEM FOTO</div>
+        {% endif %}
+        {% if not bike.foto %}
+        <img src="{% static 'img/none_bike.png' %}" class="bike-img"/>
+        {% else %}
+        <img src="/media/{{bike.foto}}" class="bike-img"/>
+        {% endif %}
+        <div class="bike-name">
+          <span class="bike-name">{{bike}}</span>
         </div>
-        <h1 class="bike-name">{{bike}}</h1>
-        <div class="buttons">
-          <a href="{% url 'vender_bike' bike.ID %}">Vender</a>
-          {% if bike.restricao == True %}
-          <a href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Liberar</a>
-          {% else %}
-          <a href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Restringir</a>
-          {% endif %}
-          <a href="{% url 'excluir_bike' bike.ID %}" onclick="return youreSure()">Excluir</a>
-        </div>
+        <a class="button-light" id="bike-button">Opções<i class="bx bx-right-arrow-alt button-icon"></i></a>
       </article>
-    </div>
+      <article class="opcoes hidden" id="opcoes" value="{{bike.ID}}">
+        <div class="bike-name">
+          <span class="bike-name">{{bike}}</span>
+          <span class="bike-name">Cod: {{bike.codigo}}</span>
+        </div>
+        <a class="button-light" href="{% url 'vender_bike' bike.ID %}">Vender</a>
+        {% if bike.restricao == True %}
+        <a class="button-light" href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Liberar</a>
+        {% else %}
+        <a class="button-light" href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Restringir</a>
+        {% endif %}
+        <a class="button-light" href="{% url 'excluir_bike' bike.ID %}" onclick="return youreSure()">Excluir</a>
+        <a class="button-light" id="opcoes-button"><i class="bx bx-left-arrow-alt button-icon"></i>Voltar</a>
+      </article>
     {% endfor %}
   </div>
 </section>

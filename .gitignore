@@ -1,5 +1,6 @@
-*.pyc'
-/venv/
+*.pyc
+venv/
 .vscode/
-/__pycache__/
-/migrations/
+__pycache__/
+migrations/
+.sqlite3
