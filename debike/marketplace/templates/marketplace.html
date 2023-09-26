@@ -1,0 +1,29 @@
+{% extends 'bases/base_market.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="{% static 'css/marketplace.css' %}" />
+{% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %}
+
+{% block 'marketplace' %}
+<li class="nav-item active">
+{% endblock %}
+
+<section class="section grid">
+    <div class="container grid">
+        {% for anuncio in anuncios %}
+        <article class="bikes" id="bikes" value="{{codigo}}">
+            {% if not anuncio.foto %}
+            <img src="{% static 'img/none_bike.png' %}" class="bike-img"/>
+            {% else %}
+            <img src="/media/{{anuncio.foto}}" class="bike-img"/>
+            {% endif %}
+            <span class="anounce-title">{{anuncio.titulo}}</span>
+            <span class="anounce-price">R$ {{anuncio.valor}}</span>
+            <div class="product-btn">
+                <a href="{% url 'detalhes' anuncio.codigo %}" class="button-light" id="bike-button">Comprar<i class="bx bx-right-arrow-alt button-icon"></i></a>
+            </div>
+          </article>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}

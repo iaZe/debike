@@ -2,6 +2,10 @@
 <link rel="stylesheet" href="{% static 'css/app.css'%}" />
 {% endblock %} {% block 'title' %}Inicio{% endblock %} {% block 'body' %}
 
+{% block 'inicio' %}
+<li class="nav-item active">
+{% endblock %}
+
 <section class="section grid">
   {% if not bikes %}
   <h2 class="section-title">Olá {{user.first_name }}, você não possui bicicletas cadastradas.</h2>
@@ -37,6 +41,12 @@
           <span class="bike-name">{{bike}}</span>
           <span class="bike-name">Cod: {{bike.codigo}}</span>
         </div>
+        
+        {% if bike.marketplace == True %}
+        <a class="button-light" href="{% url 'remover' bike.ID %}">Remover</a>
+        {% else %}
+        <a class="button-light" href="{% url 'anunciar' bike.ID %}">Anunciar</a>
+        {% endif %}
         <a class="button-light" href="{% url 'vender_bike' bike.ID %}">Vender</a>
         {% if bike.restricao == True %}
         <a class="button-light" href="{% url 'restringir_bike' bike.ID %}" onclick="return youreSure()">Liberar</a>

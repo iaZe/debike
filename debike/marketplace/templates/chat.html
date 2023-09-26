@@ -1,0 +1,71 @@
+{% extends 'bases/base_market.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="{% static 'css/chat.css' %}"/>
+{% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %}
+
+{% block 'chats' %}
+<li class="nav-item active">Chats</li>
+{% endblock %}
+
+<section class="section grid">
+    <div class="container grid">
+        <div class="card-body">
+            <div class="row">
+                <div class="four columns">
+                    <div class="search-box">
+                        <input type="text" placeholder="Pesquisar" class="search-input">
+                        <i class='bx bx-search-alt' ></i>
+                    </div>
+                    <div class="users-box">
+                        <ul class="list-chats">
+                            {% for chat in chats %}
+                            <li class="chat-list">
+                                <h1 class="chat-title">{{ chat }}</h1>
+                                <p class="chat-message">
+                                    {{ last_message }}
+                                </p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="eight columns">
+                    <div class="chat-title">
+                        <h1 class="chat-title">{{chat}}</h1>
+                    </div>
+                    <div class="chat-live">
+                        {% for message in messages %}
+                        {% if message.sender == True %}
+                        <div class="chat-right">
+                            <div class="chat-right-message">
+                                <p class="chat-message">{{message.message}}</p>
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="chat-left">
+                            <div class="chat-left-message">
+                                <p class="chat-message">{{message.message}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <div class="chat-footer">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <textarea placeholder="Escreva uma menssagem" class="chat-input" id="message" name="message"></textarea>
+                            <button onclick="sendMessage(socket, message)"><i class='bx bx-send'></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block 'scripts' %}
+<script src="{% static 'js/websocket.js' %}"></script>
+{% endblock %}

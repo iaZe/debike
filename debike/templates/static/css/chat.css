@@ -1,0 +1,185 @@
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(transparent, var(--blue-color));
+    border-radius: 6px;
+  }
+
+section.section div.container div.card-body {
+  min-height: 520px;
+  max-height: 520px;
+  overflow: hidden;
+  padding: 26px 18px 8px;
+  margin: 15px 0;
+  position: relative;
+  border-radius: 15px;
+  border: var(--tiniest-border);
+  box-shadow: var(--white-shadow);
+  background-color: var(--white-color);
+  color: var(--dark-color);
+}
+
+section.section div.container div.card-body div.row div.columns {
+  margin-left: 0;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+}
+
+section.section div.container div.card-body div.row div.four.columns {
+  width: 30%;
+}
+
+section.section div.container div.card-body div.row div.eight.columns {
+  width: 70%;
+  border-left: var(--tiniest-border);
+}
+
+section.section div.container div.card-body div.row div.search-box {
+  flex-wrap: nowrap;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  border-radius: 15px;
+    border: var(--tiniest-border);
+    box-shadow: var(--white-shadow);
+    background-color: var(--white-color);
+    color: var(--dark-color);
+}
+
+section.section div.container div.card-body div.row div.search-box input.search-input {
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: var(--font-semi-bold);
+    outline: none;
+    border: none;
+}
+
+section.section div.container div.card-body div.row div.search-box i.bx-search-alt {
+    font-size: 22px;
+    padding: 10px 15px;
+}
+
+section.section div.container div.card-body div.row div.users-box {
+    margin-top: 1rem;
+    width: 100%;
+    overflow-y: auto;
+    height: 400px;
+}
+
+ul.list-chats {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.list-chats li.chat-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 10px 0px 10px;
+    min-height: 65px;
+    max-height: 65px;
+    overflow: hidden;
+    border-top: var(--tiniest-border);
+}
+
+ul.list-chats li:hover {
+    background-color: var(--background-color-2);
+}
+
+ul.list-chats h1.chat-title {
+    font-size: 16px;
+    font-weight: var(--font-semi-bold);
+}
+
+section.section div.container div.card-body div.row div.chat-title {
+    height: 3rem;
+    border-bottom: var(--tiniest-border);
+}
+
+section.section div.container div.card-body div.row div.chat-title h1.chat-title {
+    font-size: 16px;
+    font-weight: var(--font-semi-bold);
+
+}
+
+section.section div.container div.card-body div.row div.chat-live {
+    margin-top: 1rem;
+    width: 100%;
+    overflow-y: auto;
+    height: 330px;
+}
+
+div.chat-live div.chat-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px 0px 10px;
+    margin-bottom: 10px;
+}
+
+div.chat-live div.chat-left div.chat-left-message {
+    background-color: var(--background-color-2);
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+div.chat-live div.chat-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 0 10px 0px 10px;
+    margin-bottom: 10px;
+}
+
+div.chat-live div.chat-right div.chat-right-message {
+    background-color: var(--blue-color);
+    border-radius: 15px;
+    max-width: 70%;
+}
+
+div.chat-live  p.chat-message {
+    font-size: 16px;
+    font-weight: var(--font-semi-bold);
+    padding: 10px;
+}
+
+section.section div.container div.card-body div.row div.chat-footer {
+    border-top: var(--tiniest-border);
+}
+
+section.section div.container div.card-body div.row div.chat-footer form {
+    margin-top: 1rem;
+    border-radius: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background-color-2);
+}
+
+div.chat-footer textarea.chat-input {
+    resize: none;
+    width: 90%;
+    border-radius: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: var(--font-semi-bold);
+    outline: none;
+    border: none;
+    background-color: var(--background-color-2);
+}
+
+div.chat-footer button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+div.chat-footer i.bx-send {
+    font-size: 22px;
+    padding: 10px 15px;
+    cursor: pointer;
+}

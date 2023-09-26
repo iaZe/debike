@@ -7,7 +7,6 @@ from .models import Bike, Venda, Historico
 def bikes(user):
     return Bike.objects.filter(dono=user)
 
-
 def consultar_restricao(request, codigo):
     bike = Bike.objects.filter(codigo=codigo).first()
     if not bike:

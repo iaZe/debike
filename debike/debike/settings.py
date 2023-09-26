@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 from django.contrib.messages import constants
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -42,7 +43,9 @@ INSTALLED_APPS = [
     'home',
     'usuarios',
     'bikes',
+    'marketplace',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +57,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'debike.urls'
 

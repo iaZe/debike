@@ -1,0 +1,26 @@
+{% extends 'bases/base_market.html' %} {% load static %} {% block 'head' %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+<link rel="stylesheet" href="{% static 'css/marketplace.css' %}" />
+<link rel="stylesheet" href="{% static 'css/form.css'%}" />
+{% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %} 
+
+{%block 'marketplace' %}
+<li class="nav-item active">
+{% endblock %}
+
+  <div class="container-fluid bg-inscricao bg-img">
+    <div class="box-form custom-container">
+      <h1 class="text-center">Anunciar</h1>
+      {% if messages %} {% for message in messages %}
+      <div class="alert {{ message.tags }}">{{ message }}</div>
+      {% endfor %} {% endif %}
+      <hr style="border-color: #7e7b7c" />
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %} {{ form.as_p }}
+        <input type="submit" value="Anunciar" class="button cadastro" />
+      </form>
+    </div>
+  </div>
+</li>
+
+{% endblock %}

@@ -3,9 +3,14 @@
 <link rel="stylesheet" href="{% static 'css/animation.css' %}" />
 <link rel="stylesheet" href="{% static 'css/faq.css' %}" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 {% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %}
+
+{% block 'index' %}
+<li class="nav-item active">
+{% endblock %}
+
 <section class="home section">
   <div class="home-container grid">
     <div class="home-product">
@@ -75,7 +80,11 @@
           </defs>
         </svg>
       </div>
-      <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d4330ce3f2051a9f4bb_Red%20Star.svg" alt="" class="home-star rotating-image">
+      <img
+        src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d4330ce3f2051a9f4bb_Red%20Star.svg"
+        alt=""
+        class="home-star rotating-image"
+      />
       <img src="{% static 'img/bike01.png' %}" alt="" class="home-img" />
     </div>
     <div class="home-data">
@@ -87,7 +96,11 @@
         crie uma restrição para sua bicicleta.
       </p>
       <a href="{% url 'cadastro' %}" class="button">CADASTRE-SE</a>
-      <img src="https://assets.website-files.com/5837424ae11409586f837994/6119d83a539ea14de7db7bac_Group%2022.svg" alt="" class="home-arrow">
+      <img
+        src="https://assets.website-files.com/5837424ae11409586f837994/6119d83a539ea14de7db7bac_Group%2022.svg"
+        alt=""
+        class="home-arrow"
+      />
     </div>
   </div>
 </section>
@@ -97,10 +110,16 @@
     <div class="sell-wrapper">
       <h1 class="about-title">Quem somos?</h1>
       <p class="about-text">
-        Nos, da Solutech, viemos para ajudar os ciclistas a não comprarem produtos de origem duvidosa, além da tentativa de encontrar bicicletas roubadas, e devolve-las aos seus donos.
+        Nos, da Solutech, viemos para ajudar os ciclistas a não comprarem
+        produtos de origem duvidosa, além da tentativa de encontrar bicicletas
+        roubadas, e devolve-las aos seus donos.
       </p>
       <div class="about-twinkle">
-        <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc0b73912d9c34135d850e_Purple%20Shine.svg" loading="lazy" alt="">
+        <img
+          src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc0b73912d9c34135d850e_Purple%20Shine.svg"
+          loading="lazy"
+          alt=""
+        />
       </div>
     </div>
   </div>
@@ -151,7 +170,11 @@
 
 <section class="apply section">
   <div class="apply-spike">
-    <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc10b6e899f34312ad21b6_Red%20Spike.svg" alt="" class="rotating-image">
+    <img
+      src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc10b6e899f34312ad21b6_Red%20Spike.svg"
+      alt=""
+      class="rotating-image"
+    />
   </div>
   <div class="apply-container grid">
     <div class="apply-data">
@@ -160,9 +183,21 @@
       <a href="{% url 'cadastro' %}" class="button">Cadastre-se</a>
     </div>
   </div>
-  <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d445d8430199d5b6cf6_Yellow%20Diamond%202.svg" alt="" class="apply-diamond">
-  <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d43ea57f87a2d7d3676_Flower.svg" alt="" class="apply-flower">
-  <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62c2e1d55ea0ee950ecab5d6_Slack%20Ui%20Fold%20Grid.svg" alt="" class="apply-grid">
+  <img
+    src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d445d8430199d5b6cf6_Yellow%20Diamond%202.svg"
+    alt=""
+    class="apply-diamond"
+  />
+  <img
+    src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bd5d43ea57f87a2d7d3676_Flower.svg"
+    alt=""
+    class="apply-flower"
+  />
+  <img
+    src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62c2e1d55ea0ee950ecab5d6_Slack%20Ui%20Fold%20Grid.svg"
+    alt=""
+    class="apply-grid"
+  />
 </section>
 
 <section class="faq section">
@@ -172,7 +207,11 @@
     </div>
     <div class="faq-wrapper">
       <div class="faq-img">
-        <img src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc0b731de66684984e782b_Blue%20Spike.svg" alt="" class="rotating-image">
+        <img
+          src="https://assets.website-files.com/62b9439f38ce8f1b46fb7600/62bc0b731de66684984e782b_Blue%20Spike.svg"
+          alt=""
+          class="rotating-image"
+        />
       </div>
       <div class="new-faq-wrapper">
         <div class="faq-inner-wrapper">
@@ -182,13 +221,13 @@
                 <div class="faq-text">
                   <h1 class="faq-title">Como funciona?</h1>
                 </div>
-                <div class="faq-icon"><i class='bx bx-chevron-down'></i></div>
+                <div class="faq-icon"><i class="bx bx-chevron-down"></i></div>
               </div>
               <div class="faq-content active" id="1">
-                <hr>
+                <hr />
                 <div class="faq-text">
                   <p class="faq-text">
-                    Você pode cadastrar suas bicicletas na nossa plataforma, onde você pode transferi-la quando vender ou adicionar uma restrição em caso de roubo ou furto.
+                    Você pode cadastrar suas bicicletas na nossa plataforma onde, a partir do registro adequado, você pode vender em nosso marketplace, ou até mesmo cadastrar uma restrição de roubo ou furto, para que possamos ajudar a encontrar sua bicicleta.
                   </p>
                 </div>
               </div>
@@ -198,13 +237,19 @@
                 <div class="faq-text">
                   <h1 class="faq-title">Fui roubado, e agora?</h1>
                 </div>
-                <div class="faq-icon"><i class='bx bx-chevron-down'></i></div>
+                <div class="faq-icon"><i class="bx bx-chevron-down"></i></div>
               </div>
               <div class="faq-content" id="2">
-                <hr>
+                <hr />
                 <div class="faq-text">
                   <p class="faq-text">
-                    Você deve criar uma restrição para aquela bicicleta, se alguém for comprar e encontrar essa restrição poderá entrar em contato com a policia, que poderá fazer o resgate da bicicleta e devolve-la ao seu dono.
+                    Em suas bicicletas, você terá um botão de roubo, onde irá te
+                    encaminhar para uma pequena página a qual você irá detalhar
+                    o ocorrido, e será gerado um pdf com as informações para
+                    servir de detalhamento para o boletim de ocorrências- BO,
+                    nessa aba você conseguirá acompanhar a sua bike em tempo
+                    real o que ajudará a policia a ir de encontro com o seu
+                    transporte.
                   </p>
                 </div>
               </div>
@@ -212,15 +257,21 @@
             <div class="faq-item last" id="3">
               <div class="faq-header">
                 <div class="faq-text">
-                  <h1 class="faq-title">Quero comprar uma bicicleta, como me certifico que não é roubada?</h1>
+                  <h1 class="faq-title">
+                    Quero comprar uma bicicleta, como me certifico que não é
+                    roubada?
+                  </h1>
                 </div>
-                <div class="faq-icon"><i class='bx bx-chevron-down'></i></div>
+                <div class="faq-icon"><i class="bx bx-chevron-down"></i></div>
               </div>
               <div class="faq-content" id="3">
-                <hr>
+                <hr />
                 <div class="faq-text">
                   <p class="faq-text">
-                    Além de solicitar a nota fiscal do produto ao vendedor, você pode consultar pelo código da bicicleta em nossa plataforma e descobrir se ela possui alguma restrição.
+                    Na Solutech você consegue comprar ou vender bikes com toda a
+                    regularização necessária para garantir um bem de qualidade.
+                    Todas as bicicletas cadastradas no sistema estão devidamente
+                    registradas e com toda a documentação em dia.
                   </p>
                 </div>
               </div>
@@ -229,12 +280,9 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
-{% endblock %}
-
-{% block 'script' %}
+{% endblock %} {% block 'script' %}
 <script src="{% static 'js/faq.js' %}"></script>
 <script src="{% static 'js/animation.js' %}"></script>
 {% endblock %}

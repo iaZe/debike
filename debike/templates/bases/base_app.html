@@ -29,18 +29,34 @@
       <nav class="nav">
         <div class="nav-menu">
           <ul class="nav-list">
-            <li class="nav-item active">
+            {% block 'inicio' %}
+            <li class="nav-item">
+            {% endblock %}
               <a href="{%url 'inicio' %}">Bikes</a>
             </li>
+            {% block 'cadastrar_bike' %}
             <li class="nav-item">
+            {% endblock %}
               <a href="{%url 'cadastrar_bike' %}">Cadastrar</a>
             </li>
+            {% block 'consultar_bike' %}
             <li class="nav-item">
+            {% endblock %}
               <a href="{% url 'consultar_bike' %}">Consultar</a>
+            </li>
+            {% block 'marketplace' %}
+            <li class="nav-item">
+            {% endblock %}
+              <a href="{% url 'marketplace' %}">Marketplace</a>
             </li>
           </ul>
         </div>
         <div class="nav-login">
+          <a href="{% url 'chat' 0 %}" class="">
+            <ul class="nav-list">
+              <li class="nav-item">Chats</li>
+            </ul>
+          </a>
           <a href="{% url 'logout' %}" class="entrar">
             <ul class="nav-list">
               <li class="nav-item">Sair</li>

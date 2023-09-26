@@ -1,0 +1,96 @@
+section.section div.container div.details-view {
+  padding: 26px 18px 8px;
+  margin: 15px 0;
+  position: relative;
+  border-radius: 15px;
+  border: var(--tiniest-border);
+  box-shadow: var(--white-shadow);
+  background-color: var(--white-color);
+  color: var(--dark-color);
+}
+
+section.section div.container div.details-view a.close-view {
+    top: 0;
+    right: 18px;
+    font-size: var(--bigger-font-size);
+    color: var(--dark-color);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    z-index: 3;
+}
+
+section.section div.container div.details-view a.close-view:hover {
+    color: var(--green-color);
+}
+
+section.section div.container div.details-view div.row div.columns {
+    margin-left: 0;
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+}
+
+section.section div.container div.details-view div.row div.four.columns {
+    width: 30.6666666667%;
+}
+
+section.section div.container div.details-view div.row div.eight.columns {
+    width: 65.3333333333%;
+    margin-left: 4%;
+}
+
+section.section div.container div.details-view div.row div.card {
+    position: relative;
+    display: inline-block;
+}
+
+section.section div.container div.details-view div.row div.card img.item-thumb {
+    top: 0;
+    left: 0;
+}
+section.section div.container div.details-view div.row div.card img {
+    max-height: 310px;
+    margin: 10px auto;
+}
+
+section.section div.container div.details-view div.row h1.anounce-title {
+    margin-bottom: 1rem;
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+    letter-spacing: .1rem;
+}
+
+section.section div.container div.details-view div.row p.anounce-description {
+    margin-bottom: 1rem;
+    font-size: var(--p-font-size);
+    font-weight: var(--font-regular);
+}
+
+section.section div.container div.details-view div.row span.anounce-price {
+    position: absolute;
+    bottom: 3.5rem;
+    font-size: var(--big-font-size);
+    font-weight: var(--font-bold);
+}
+
+section.section div.container div.details-view div.row div.creation {
+    position: absolute;
+    bottom: 1rem;
+}
+
+section.section div.container div.details-view div.row span.create-date {
+    font-size: var(--p-font-size);
+    font-weight: var(--font-regular);
+}
+
+section.section div.container div.details-view div.row div.product-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+section.section div.container div.details-view div.row div.product-btn a.button {
+    background-color: var(--yellow-color);
+}

@@ -12,6 +12,7 @@ class Bike(models.Model):
     dono = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     foto = models.FileField(upload_to="fotos", blank=True)
     restricao = models.BooleanField(default=False)
+    marketplace = models.BooleanField(default=False)
     data_cadastro = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
