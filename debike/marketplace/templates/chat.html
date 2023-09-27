@@ -32,7 +32,7 @@
 
                 <div class="eight columns">
                     <div class="chat-title">
-                        <h1 class="chat-title">{{chat}}</h1>
+                        <h1 class="chat-title">{{ chat }}</h1>
                     </div>
                     <div class="chat-live">
                         {% for message in messages %}
@@ -53,9 +53,13 @@
                     </div>
                     <div class="chat-footer">
                         <form method="POST" action="">
+                            {% if chat == 'Sistema'%}
+                            <textarea readonly placeholder="Você não pode enviar mensagens aqui" class="chat-input"></textarea>
+                            {% else %}
                             {% csrf_token %}
                             <textarea placeholder="Escreva uma menssagem" class="chat-input" id="message" name="message"></textarea>
-                            <button onclick="sendMessage(socket, message)"><i class='bx bx-send'></i></button>
+                            <button><i class='bx bx-send'></i></button>
+                            {% endif %}
                         </form>
                     </div>
                 </div>

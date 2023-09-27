@@ -14,6 +14,8 @@ urlpatterns = [
     path("bikes/", include("bikes.urls")),
 
     path("marketplace/", include("marketplace.urls")),
+
+    path("__debug__/", include("debug_toolbar.urls")),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += [re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT, }), ]

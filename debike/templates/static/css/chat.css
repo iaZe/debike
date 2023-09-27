@@ -144,6 +144,14 @@ div.chat-live  p.chat-message {
     font-weight: var(--font-semi-bold);
     padding: 10px;
 }
+div.chat-live  p.chat-message a {
+    color: var(--blue-color);
+}
+
+div.chat-live  p.chat-message a:hover {
+    color: var(--blue-color);
+    text-decoration: underline;
+}
 
 section.section div.container div.card-body div.row div.chat-footer {
     border-top: var(--tiniest-border);

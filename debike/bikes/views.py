@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.urls import reverse
 
+from marketplace.models import Anuncio
 from .forms import CadastrarBikeForm, ConsultarBikeForm, VenderBikeForm
 from .models import Bike
 from .utils import consultar_restricao, realizar_venda
@@ -57,6 +58,8 @@ def vender(request, codigo):
         form = VenderBikeForm(request.POST)
         if form.is_valid():
             realizar_venda(request, bike, form)
+            if bike in Anuncio.objects.all():
+                Anuncio.objects.filter(bike=bike).delete()
             return redirect(reverse("inicio"))
     else:
         form = VenderBikeForm()

@@ -119,64 +119,45 @@ def comprar(request, anuncio_codigo):
 @login_required
 def chat(request, chat_id):
     if request.method == "GET":
-        # por padrão, o chat_id vai ser 0, para garantir que qualquer um possa abrir a página de chat, o chat 0 já é o chat padrão do sistema
+        chats = Chat.objects.filter(comprador=request.user) | Chat.objects.filter(
+            vendedor=request.user # carrega a lista de chats do usuário para exibir na sidebar
+        )
         if chat_id == 0:
-            # ao abrir o chat 0, precisamos verificar se o usuário já tem um chat como comprador ou vendedor, se sim, redirecionamos para o chat
-            chat = Chat.objects.filter(comprador=request.user) | Chat.objects.filter(
-                vendedor=request.user
-            )
-            # redirecionar o último chat do usuário, caso ele tenha mais de um
-            if chat:
-                chat = chat[len(chat) - 1]
+            if chats:
+                chat = chats[0]
                 return redirect(reverse("chat", kwargs={"chat_id": chat.id}))
             else:
-                #apresenta o chat 0, caso o usuário não tenha nenhum chat
-                chat = "Sistema"
-                message = mark_safe(
-                "Você não possui chats abertos, que tal buscar novos produtos clicando <a href='{% url 'marketplace' %}'>aqui</a>?"
-                )
-                messages = [{"sender": "admin", "message": message}]
-
-                return render(
-                    request,
-                    "chat.html",
-                    {"chat": chat, "messages": messages, "last_message": message},
-                )
+                chat = None
         else:
             chat = Chat.objects.filter(id=chat_id).first()
-        # verifica se o usuário tem permissão para acessar o chat
-        print(chat.vendedor, chat.comprador, request.user)
-
         if chat.vendedor != request.user and chat.comprador != request.user:
+            messages.error(request, "Você não tem permissão para acessar este chat")
             return redirect(reverse("inicio"))
-        
-        message_instance, created = Messages.objects.get_or_create(chat=chat)
-        messages = message_instance.get_historico()
-        # marca as mensagens enviadas pelo usuário como True, para diferenciar na template
-        for message in messages:
-            if message["sender"] == request.user.username:
-                message["sender"] = True
-        last_message = messages[-1]["message"]
-
-        # carregar a lista de chats do usuário para a barra lateral
-        print(chat)
-        print(last_message)
+        if chat:
+            message_instance, created = Messages.objects.get_or_create(chat=chat)
+            messages = message_instance.get_historico()
+            for message in messages:
+                if message["sender"] == request.user.username:
+                    message["sender"] = True
+            last_message = messages[-1]["message"]
+        else:
+            chat = "Sistema"
+            message = mark_safe(
+                "Você não possui chats abertos, que tal buscar novos produtos clicando <a href='{% url 'marketplace' %}'>aqui</a>?"
+            )
+            messages = [{"message": message, "sender": "admin"}]
+            last_message = None
 
         return render(
             request,
             "chat.html",
             {
                 "chat": chat,
+                "chats": chats,
                 "messages": messages,
                 "last_message": last_message,
             },
         )
-        
-
-        
-        
-        
-
 
     if request.method == "POST":
         chat = get_object_or_404(Chat, id=chat_id)
