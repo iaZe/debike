@@ -9,6 +9,9 @@ from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 from django.utils.safestring import mark_safe
 
+import firebase_admin
+from firebase_admin import db
+
 from bikes.models import Bike
 from usuarios.models import CustomUser
 from .forms import AnuncioForm
@@ -119,15 +122,11 @@ def comprar(request, anuncio_codigo):
 @login_required
 def chat(request, chat_id):
     if request.method == "GET":
-        # por padrão, o chat_id vai ser 0, para garantir que qualquer um possa abrir a página de chat, o chat 0 já é o chat padrão do sistema
+        chats = Chat.objects.filter(comprador=request.user) | Chat.objects.filter(vendedor=request.user)
         if chat_id == 0:
-            # ao abrir o chat 0, precisamos verificar se o usuário já tem um chat como comprador ou vendedor, se sim, redirecionamos para o chat
-            chat = Chat.objects.filter(comprador=request.user) | Chat.objects.filter(
-                vendedor=request.user
-            )
             # redirecionar o último chat do usuário, caso ele tenha mais de um
-            if chat:
-                chat = chat[len(chat) - 1]
+            if chats:
+                chat = chats[len(chats) - 1]
                 return redirect(reverse("chat", kwargs={"chat_id": chat.id}))
             else:
                 #apresenta o chat 0, caso o usuário não tenha nenhum chat
@@ -143,41 +142,27 @@ def chat(request, chat_id):
                     {"chat": chat, "messages": messages, "last_message": message},
                 )
         else:
-            chat = Chat.objects.filter(id=chat_id).first()
-        # verifica se o usuário tem permissão para acessar o chat
-        print(chat.vendedor, chat.comprador, request.user)
+            chat = get_object_or_404(Chat, id=chat_id)
 
         if chat.vendedor != request.user and chat.comprador != request.user:
             return redirect(reverse("inicio"))
         
         message_instance, created = Messages.objects.get_or_create(chat=chat)
         messages = message_instance.get_historico()
-        # marca as mensagens enviadas pelo usuário como True, para diferenciar na template
         for message in messages:
             if message["sender"] == request.user.username:
                 message["sender"] = True
-        last_message = messages[-1]["message"]
-
-        # carregar a lista de chats do usuário para a barra lateral
-        print(chat)
-        print(last_message)
 
         return render(
             request,
             "chat.html",
             {
                 "chat": chat,
+                "chats": chats,
                 "messages": messages,
-                "last_message": last_message,
             },
         )
         
-
-        
-        
-        
-
-
     if request.method == "POST":
         chat = get_object_or_404(Chat, id=chat_id)
         if request.user == chat.comprador or request.user == chat.vendedor:

@@ -32,6 +32,8 @@ class Chat(models.Model):
     anuncio = models.ForeignKey(Anuncio, on_delete=models.CASCADE)
     comprador = models.ForeignKey("usuarios.CustomUser", on_delete=models.CASCADE)
     vendedor = models.ForeignKey("usuarios.CustomUser", on_delete=models.CASCADE, related_name="vendedor")
+    last_message = models.TextField()
+    data_criacao = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.anuncio.titulo
@@ -49,9 +51,10 @@ class Messages(models.Model):
         resposta = {
             'sender': message['sender'],
             'message': message['message'],
-            'date': message['date']
+            'date': message['date'],
         }
         historico.append(resposta)
+        Chat.objects.filter(id=self.chat.id).update(last_message=message['message'])
         self.message = json.dumps(historico)
         self.save()
         self.notificar_usuarios(message)

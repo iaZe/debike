@@ -20,10 +20,12 @@
                         <ul class="list-chats">
                             {% for chat in chats %}
                             <li class="chat-list">
+                                <a href="{% url 'chat' chat.id %}">
                                 <h1 class="chat-title">{{ chat }}</h1>
                                 <p class="chat-message">
-                                    {{ last_message }}
+                                    {{ chat.last_message }}
                                 </p>
+                                </a>
                             </li>
                             {% endfor %}
                         </ul>

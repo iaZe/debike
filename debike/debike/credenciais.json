@@ -1,0 +1,14 @@
+{
+    "type": "service_account",
+    "project_id": "solutech-38884",
+    "private_key_id": "972d371348dce94154b793c28efa6fc7a2192458",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDPuooZ2c/RDa6A\ni0M48sjwcbSbaD60sYLis3UpjnXtTlZVS1v1pPm34Wxv9DGpj/V4TMFqgRQVj0iM\ndJt5zVGYArGG9laARwvu3ExyhHdb581qZu8e+2xVr27Su/6gPnHbIxbO4nuGiBw8\nXzUdJTKrWtht3ue+dhXkTKp04KZ5bmjDPy+LVg52YUW039Jd2WQ+ZN1KGksg4A4M\nnqBrAOfU2jFbt+jb4CIE5m1cqn+SHO0XugU3z5yEonVdr16LUKNzF6NcZxt6ohSb\n0nVJHWuaSPEj+QFQEhza5bgfbokHJouV0Y1IF7Fptg4YeRfMtmR7HKNmqw3wneM+\nQk5CuWUDAgMBAAECggEADcmhJyd/wmDvMnhlc4i0N9CPci2aB+ITJwGBTWS3kayW\nHcT9BN6fD1dNHFf8pqpq9EHbKDrXPrnknb0s1Dzn/wTV8quadAFpmqbEBJyjoK9P\nwStO3ZZ58aAAy5T1yORyjl7gWyzJXrvdbLZnCJjlwyp29g5XATT5emgKSLkTSgW6\nHAWO0TTVx1YMtTAPx7pRU64WIFxfCCQ21MgRfwBIbIkWb9zvabyfO9eO05b/8VXt\n6mhiDRA4b/4zsv9MepGYk/da/vPXw1pyADWcdtlLFtQoLkwp7K5TCDpJuk4HAeKp\nzcc90gsFXE9HcPBnu8p5uE4wWX+3RgohCMNINhidPQKBgQDrkpxfv6HZzQF3Q1ga\nifmONTwj2acshXniixauy9emz1xWBCNqtBWn1Q/5nD3HGQ2AxYozqOEnhG/zRRL7\nv54KXEVCr9YZadTGgglp43pdupVXfXu0lK4cwsvOhBadf8nuBM45bkIYg6B0O1kM\nGWMubSWdYHBhp4Gt2x4hghELfQKBgQDhvdReXdqN9BXJKAgihtxg1RGGScu+v44V\nvieIr0Uo/DjFq3siiVF6vgA7pTK/4Vj2I2fNDCuIlHvzMSJ1OWGn/J5y7HEpkTjm\nn8FRnZiI/aMG5NusYyUp1DDYBzW7c61zAhgkvyqGuTadLRKijMtNwuAP6YRyDF/1\n3m3jbKIafwKBgQCwDSeUXxDERvN7f/bODqNUZfCGEllfanlGlw/injCSV5H4LquR\nSPiOLyr7Lor0yoJO5FJ+fQ2XjOBlfA/N2MxxjbetON/WqkL7/56tZfXDKngFpJ/Y\nuuzMTcAmnIySNDhjC3Bbd00qKOS3OMs5wZdf0O41iScztA20Mnd4L04xuQKBgQCD\n6eMk9eFWXJEyiFMgogA8EaZ4+7y1DckgyYreo9VdWu5uDIQbLXVQraEDOckLOcs7\nonrw5rC10lcQSOEi8VIw0T1iWOrT6IoAstBMOjS9sMHIsInyFcnMxLN6OdRbYwCz\nmUC0kIVwTuEsPf+Kv426NiurAMGlx7d3vPAoGv4rTwKBgAlcDpjxPlTNABGWIrDD\nLffkEpwUxx51u7CY/2TuL6XMIAOb8TNxgJywCvF+0uxvMLLosaw9NOl7lOL0CvDI\nr+/tWWQKTz1pTJGJmvOGcnMYTaB1wORknHoHjy196jEpU8rNPm+7IUAvj/7K4Elh\n2sv3OagO5KUk/XWjirqfjb6c\n-----END PRIVATE KEY-----\n",
+    "client_email": "firebase-adminsdk-w23fk@solutech-38884.iam.gserviceaccount.com",
+    "client_id": "111645996327583826652",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-w23fk%40solutech-38884.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+  }
+  
