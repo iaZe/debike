@@ -3,14 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.urls import reverse
 
-from django.http import HttpResponse
-from django.views.decorators.csrf import csrf_exempt
-from channels.layers import get_channel_layer
-from asgiref.sync import async_to_sync
 from django.utils.safestring import mark_safe
-
-import firebase_admin
-from firebase_admin import db
 
 from bikes.models import Bike
 from usuarios.models import CustomUser
