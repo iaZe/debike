@@ -1,49 +1,50 @@
 {% extends 'bases/base_index.html' %} {% load static %} {% block 'head' %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}" />
-{% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %}
-
-{% block 'sobre' %}
+{% endblock %} {% block 'title' %}Solutech{% endblock %} {% block 'body' %} {%
+block 'sobre' %}
 <li class="nav-item active">
-{% endblock %}
+  {% endblock %}
 
-<section class="home section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="about">
-          <h1 class="home-title">Quem somos</h1>
-          <p>
-            A Solutech surgiu no ano de 2023 por um grupo de alunos da graduação
-            de Análise e desenvolvimento de sistemas, um projeto desenvolvido
-            com a finalidade de combater problemas de mobilidade urbana voltado
-            para o grupo de ciclistas. O sistema foi trazido para servir como um
-            banco de dados com todas as informações básicas das bicicletas que
-            circulam pelas ruas das cidades, garantindo assim uma regularização
-            do transporte e uma segurança a seus donos contra furtos e roubos o
-            que é um grande problema para esse grupo de pessoas.
-          </p>
-          <h2 class="home-title">Missão</h2>
-          <p>
-            A empresa existe com o intuito maior de regularizar as bicicletas
-            nas ruas, promovendo segurança, comodidade, registro aos donos e
-            evitar roubos e furtos desses bens.
-          </p>
-          <h2 class="home-title">Visão</h2>
-          <p>
-            Homologação do nosso sistema com o órgão responsável pelas
-            regulamentação das leis de transito e registros dos veículos ativos
-            para promover uma segurança nacional contra furtos e roubos, mas
-            também com compra e venda aos usuários de bicicletas.
-          </p>
-          <h2 class="home-title">Valores</h2>
-          <p>
-            Responsabilidade, compromisso, comunidade, integridade, segurança,
-            honestidade, confiança e respeito
-          </p>
+  <section class="home section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="about">
+            <h1 class="home-title">Quem somos</h1>
+            <p>
+              A Solutech surgiu no ano de 2023 por um grupo de alunos da
+              graduação de Análise e Desenvolvimento de Sistemas, um projeto
+              desenvolvido com a finalidade de combater problemas de mobilidade
+              urbana voltado para o grupo de ciclistas. O sistema foi criado
+              para servir como um banco de dados com todas as informações
+              básicas das bicicletas que circulam pelas ruas das cidades,
+              garantindo assim a regularização do transporte e a segurança de
+              seus donos contra furtos e roubos, o que é um grande problema para
+              esse grupo de pessoas.
+            </p>
+            <h2 class="home-title">Missão</h2>
+            <p>
+              A empresa existe com o intuito maior de regularizar as bicicletas
+              nas ruas, promovendo segurança, comodidade, registro aos donos e
+              evitando roubos e furtos desses bens.
+            </p>
+            <h2 class="home-title">Visão</h2>
+            <p>
+              Homologação do nosso sistema com o órgão responsável pela
+              regulamentação das leis de trânsito e registros dos veículos
+              ativos para promover segurança nacional contra furtos e roubos,
+              mas também com compra e venda aos usuários de bicicletas.
+            </p>
+            <h2 class="home-title">Valores</h2>
+            <p>
+              Responsabilidade, compromisso, comunidade, integridade, segurança,
+              honestidade, confiança e respeito.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-{% endblock %}
+  {% endblock %}
+</li>

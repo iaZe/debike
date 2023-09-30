@@ -1,6 +1,7 @@
 {% extends 'bases/base_login.html' %} {% load static %} {% block 'head' %}
 <link rel="stylesheet" href="{% static 'css/cadastro_completo.css'%}" />
-{% endblock %} {% block 'title' %}Complete seu cadastro{% endblock %} {% block 'body' %}
+{% endblock %} {% block 'title' %}Complete seu cadastro{% endblock %} 
+{% block 'body' %}
 
 <div class="container-fluid bg-inscricao bg-img">
   <div class="box-form custom-container">
@@ -26,8 +27,63 @@
         <div class="col-md"><label>Telefone*:</label>{{ form.telefone }}</div>
       </div>
       <div class="row">
-        <div class="col-md"><label>Cidade*:</label>{{ form.cidade }}</div>
-        <div class="col-md"><label>Estado*:</label>{{ form.estado }}</div>
+        <div class="col-md">
+          <label>Estado*:</label>
+          <select id="id_estado" name="estado" class="col-md form-control" required="True">
+            <option value="">Selecione o estado</option>
+            {% for estado_code, estado_name in form.fields.estado.choices %}
+            {% if user.estado == estado_code %}
+            <option value="{{ estado_code }}" selected>{{ estado_name }}</option>
+            {% else %}
+            <option value="{{ estado_code }}">{{ estado_name }}</option>
+            {% endif %}
+            {% endfor %}
+          </select>
+        </div>
+        <div class="col-md">
+          <label>Cidade*:</label>
+          <select name="cidade" id="id_cidade" class="col-md form-control" required="True">
+            {% if user.cidade %}
+            <option value="{{ user.cidade }}" selected>{{ user.cidade }}</option>
+            {% else %}
+            <option value="">Selecione a cidade</option>
+            {% endif %}
+          </select>
+          <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+          <script>
+            $(document).ready(function () {
+              $('#id_estado').change(function () {
+                var estadoCode = $(this).val()
+                console.log(estadoCode) // Verifique se isso é impresso no console
+                if (estadoCode !== '') {
+                  $.ajax({
+                    url: `/accounts/api/get_cities/${estadoCode}/`,
+                    method: 'GET',
+                    success: function (data) {
+                      var cidadeSelect = $('#id_cidade')
+                      cidadeSelect.empty()
+                      cidadeSelect.append(
+                        '<option value="">Selecione a cidade</option>'
+                      )
+                      $.each(data.cidades, function (index, cidade) {
+                        cidadeSelect.append(
+                          '<option value="' +
+                            cidade +
+                            '">' +
+                            cidade +
+                            '</option>'
+                        )
+                      })
+                    },
+                    error: function () {
+                      console.log('Erro ao buscar cidades.')
+                    }
+                  })
+                }
+              })
+            })
+          </script>
+        </div>
       </div>
       <input type="submit" value="CADASTRAR" class="button" />
     </form>

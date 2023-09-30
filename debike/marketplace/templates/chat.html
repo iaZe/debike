@@ -59,7 +59,7 @@
                             <textarea readonly placeholder="Você não pode enviar mensagens aqui" class="chat-input"></textarea>
                             {% else %}
                             {% csrf_token %}
-                            <textarea placeholder="Escreva uma menssagem" class="chat-input" id="message" name="message"></textarea>
+                            <textarea placeholder="Escreva uma menssagem" class="chat-input" id="message" name="message" required="True"></textarea>
                             <button><i class='bx bx-send'></i></button>
                             {% endif %}
                         </form>

@@ -9,35 +9,6 @@ class CustomUserCompleteForm(forms.ModelForm):
         ("O", "Outro"),
         ("N", "Prefiro não informar"),
     )
-    ESTADO = (
-        ("AC", "Acre"),
-        ("AL", "Alagoas"),
-        ("AP", "Amapá"),
-        ("AM", "Amazonas"),
-        ("BA", "Bahia"),
-        ("CE", "Ceará"),
-        ("DF", "Distrito Federal"),
-        ("ES", "Espírito Santo"),
-        ("GO", "Goiás"),
-        ("MA", "Maranhão"),
-        ("MT", "Mato Grosso"),
-        ("MS", "Mato Grosso do Sul"),
-        ("MG", "Minas Gerais"),
-        ("PA", "Pará"),
-        ("PB", "Paraíba"),
-        ("PR", "Paraná"),
-        ("PE", "Pernambuco"),
-        ("PI", "Piauí"),
-        ("RJ", "Rio de Janeiro"),
-        ("RN", "Rio Grande do Norte"),
-        ("RS", "Rio Grande do Sul"),
-        ("RO", "Rondônia"),
-        ("RR", "Roraima"),
-        ("SC", "Santa Catarina"),
-        ("SP", "São Paulo"),
-        ("SE", "Sergipe"),
-        ("TO", "Tocantins"),
-    )
     first_name = forms.CharField(
         required=True,
         label="Nome*",
@@ -72,17 +43,6 @@ class CustomUserCompleteForm(forms.ModelForm):
         required=True,
         label="Data de nascimento*",
         widget=forms.DateInput(attrs={"class": "form-control"}),
-    )
-    cidade = forms.CharField(
-        required=True,
-        label="Cidade*",
-        widget=forms.TextInput(attrs={"class": "form-control"}),
-    )
-    estado = forms.ChoiceField(
-        required=True,
-        label="Estado*",
-        choices=ESTADO,
-        widget=forms.Select(attrs={"class": "form-control"}),
     )
 
     class Meta:

@@ -9,28 +9,28 @@ class AnuncioForm(forms.ModelForm):
     )
     titulo = forms.CharField(
         required=True,
-        label="Título",
+        label="Título*",
         widget=forms.TextInput(attrs={"class": "form-control"}),
     )
     descricao = forms.CharField(
         required=True,
-        label="Descrição",
+        label="Descrição*",
         widget=forms.Textarea(attrs={"class": "form-control"}),
     )
     tipo = forms.ChoiceField(
         required=True,
-        label="Tipo",
+        label="Tipo*",
         choices=TIPO,
         widget=forms.Select(attrs={"class": "form-control"}),
     )
     valor = forms.DecimalField(
         required=True,
-        label="Valor",
+        label="Valor*",
         widget=forms.NumberInput(attrs={"class": "form-control"}),
     )
     foto = forms.FileField(
         required=False,
-        label="Fotos",
+        label="Fotos*",
         widget=forms.ClearableFileInput(attrs={"multiple": False, "class": "form-control"}),
     )
     class Meta:
