@@ -1,12 +1,10 @@
-from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.urls import reverse
 
+from debike.settings import BASE_DIR
 import re
 import json
 
 from .models import CustomUser
-from .forms import CustomUserCompleteForm
 
 def save_user(form):
     user = form.save(commit=False)
@@ -75,7 +73,8 @@ def validate_telefone(request, telefone):
     if telefone[2] != "9":
         return messages.error(request, "Telefone deve conter o 9° dígito")
     
-    with open('DDD.json', 'r') as json_file:
+    path = BASE_DIR / "usuarios" / "DDD.json"
+    with open(path, 'r') as json_file:
         ddd_estados = json.load(json_file)
     ddd = telefone[:2]
     estado = ddd_estados["DDD"].get(ddd)
